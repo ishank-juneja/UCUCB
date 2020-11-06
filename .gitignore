@@ -1,3 +1,13 @@
+# Image files
+*.svg
+*png
+*.jpg
+*.JPG
+
+# Pycharm related project files
+*.iml
+*.xml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
