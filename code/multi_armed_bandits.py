@@ -7,7 +7,7 @@ import sys
 
 # User Non cmd line constants
 file = "../instances/i-4.txt"
-# Options
+# Algorithms to be simulated
 algos = ['uni-c-ucb']
 # eps factor for deciding confidence set
 eps = 0.11
@@ -58,14 +58,14 @@ if __name__ == '__main__':
             # print(expectations)
             # print(k_opt)
             bandit_instance = arm_functions(arm_list)
-            # Initialise cummulative reward
+            # Initialise cumulative reward
             REW = 0
             REG = 0
             # UCB: Vanilla Upper Confidence Bound Sampling algorithm
             if al == 'ucb':
                 # Array to hold empirical estimates of each arms reward expectation
                 mu_hat = np.zeros(n_arms)
-                # Initilaise UCB index with infinity so that each arm sampled once at start
+                # Initialize UCB index with infinity so that each arm sampled once at start
                 I_ucb = np.repeat(np.inf, n_arms)
                 # Number of times a certain arm is sampled
                 nsamps = np.zeros(n_arms)
@@ -182,9 +182,9 @@ if __name__ == '__main__':
                     # Construct an array with indices as 1 for points that lie in the inverse
                     incr_indices = bandit_instance.get_inverse(k, r).astype(int)
                     # Get change vector by taking dot pruct with prior distribution
-					# WARNING: This biasing of the update is not recommneded and 
-					# has been corrected in a lter version                    
-					incr_vector = incr_indices*dist_hat
+                    # WARNING: This biasing of the update is not recommneded and
+                    # has been corrected in a lter version
+                    incr_vector = incr_indices*dist_hat
                     # Update the pseudo distribution
                     dist_hat = (t*dist_hat + incr_vector/np.sum(incr_vector))/(t+1)
                     # Get indices that would sort distribution array
@@ -203,7 +203,6 @@ if __name__ == '__main__':
                     if t % STEP == 0:
                         sys.stdout.write(
                             "{0}, {1}, {2}, {3}, {4:.2f}, {5:.2f}\n".format(al, rs, eps, t, REG, exp_max * t - REW))
-
             # UCB: Uniform-C - Upper Confidence Bound Sampling algorithm
             # As described in our report
             elif al == 'uni-c-ucb2':
@@ -269,12 +268,8 @@ if __name__ == '__main__':
                         print(dist_hat)
                         sys.stdout.write(
                             "{0}, {1}, {2}, {3}, {4:.2f}, {5:.2f}\n".format(al, rs, eps, t, REG, exp_max * t - REW))
-
-
             # No valid algorithm selected
             else:
                 print("Invalid algorithm selected")
                 # Don't print REG
                 exit(-1)
-
-
