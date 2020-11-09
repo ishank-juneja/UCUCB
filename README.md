@@ -20,17 +20,17 @@ These scripts simulate the vanilla UCB, CUCB and UCUCB policies on a specified c
 
 1. Create a bandit instance `.txt` file defining the correlated bandit instance on which the policies are to be simulated 
 
-2. Set simulation parameters
+2. Set the simulation parameters in the script
 
 3. Run script and save results in a `.txt` file
 
-4. 
+Details Coming soon
 
 ### Related Work on Github
 
 1. Our implementation of other sequential decision making algorithms for Multi-Armed-Bandits implemented in [this repository](https://github.com/ishank-juneja/intelligent-agents). Implemented algorithms 
 
-2. The 
+2. Work on correlated Age-of-Information bandits [repository](https://github.com/ishank-juneja/Correlated-AoI-Bandits)  
 
 ### References
 
