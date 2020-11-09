@@ -1,3 +1,7 @@
+# Not the images in the media folder
+!media/*.png
+!media/*.jpg
+
 # Image files
 *.svg
 *png
